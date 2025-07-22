@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>ホームページをリニューアルしました</title>
+       <style>
+
+        @import url('https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap');
+
+        h1 {
+            text-align: center;
+            font-family: "Noto Sans-JP", sans-serif;
+            font-size: 32px;
+            letter-spacing: 2px;
+            padding: 0 30px;
+        }
+
+        h2 {
+            font-family: "Didact Gothic", sans-serif;
+            font-size: 25px;
+            letter-spacing: 2px;
+            margin: 40px;
+        }
+
+        h3 {
+            text-align: center;
+            font-weight: 600;
+            color: #000000;
+            font-size: 20px;
+            font-family: "Noto Sans-JP",sans-serif;
+        }
+
+        h4 {
+            text-align: center;
+            font-weight: bold;
+            font-size: 20px;
+            color: #7a7a7a;
+            font-family: "Didact Gothic", sans-serif;
+            text-align: left;
+        }
+
+        p {
+            padding: 0 40px;
+            font-family: "Noto Sans-JP", sans-serif;
+            font-weight: 500;
+            margin-left: 15px;
+        }
+
+        hr {
+            width: 90%;
+            border: none;
+            border-top: 0.5px solid #555555;
+            margin-top: 100px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #000000;
+            transition: color 0.2s;
+        }
+
+        main {
+            margin-top: 100px;
+        }
+
+        .contents {
+            margin-top: 60px;
+            margin-bottom: 60px;
+        }
+
+        @media screen and (min-width: 570px) {
+
+        }
+
+        @media screen and (max-width: 570px) {
+
+        }
+
+    </style>
+</head>
+
+<body>
+    <main>
+        
+        <div id="header"></div>
+
+        <div class="midashi">
+        <h1>ホームページをリニューアルしました</h1>
+        </div>
+
+        <hr style="width: 95%; margin-top: 50px;">
+
+        <div class="contents">
+        <h2>はじめに</h2>
+        <p>こんにちは。僕がWebデザインを始めてからはや半年。<br>
+            更にホームページを公開してから少ししか時間が経ってないにも関わらず、<br>
+            僕が何故ホームページを作り直したのか説明しようと思います。</p>
+
+        <h2>なぜ</h2>
+        <p>まず、こんなにも早くホームページを作り直した理由ですが、<br>
+            理由は一つです。<br><br>雑だった<br><br>
+            ただそれだけです。前のホームページの作りがあまりにも雑すぎました。<br>
+            これまではVSCodeで作ったものをGithubにアップロードして作っていたのですが、<br>
+            いつしかファイルのデータがめちゃくちゃになって戻しようがなくなりました。<br>
+            そこでこのホームページを作ったわけです。
+        </p>
+
+        <h2>終わりに</h2>
+        <p>さて、短いですが今回の記事は終わりです。これからはこっちのページで<br>
+            主に活動内容を載せていきます。これからも何卒応援よろしくお願いします。</p>
+
+        </div>
+
+        <hr style="margin-top: 40px;">
+
+        <div id="footer"></div>
+
+        </main>
+
+<script>
+    fetch("header.html")
+        .then(response => response.text())
+        .then(data => {
+            document.querySelector("#header").innerHTML = data;
+      });
+
+    fetch("footer.html")
+        .then((response) => response.text())
+        .then((data) => document.querySelector("#footer").innerHTML = data);
+</script>
+</body>
+</html>

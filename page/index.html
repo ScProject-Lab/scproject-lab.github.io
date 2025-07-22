@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=yes">
+    <title>実験場</title>
+    <style>
+
+        @import url('https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap');
+
+        h2 {
+            text-align: center;
+            font-family: "Didact Gothic", sans-serif;
+            font-size: 200%;
+            letter-spacing: 2px;
+        }
+
+        h3 {
+            text-align: center;
+            font-weight: 600;
+            color: #000000;
+            font-size: 20px;
+            font-family: "Noto Sans-JP",sans-serif;
+        }
+
+        h4 {
+            text-align: center;
+            font-weight: bold;
+            font-size: 20px;
+            color: #7a7a7a;
+            font-family: "Didact Gothic", sans-serif;
+            text-align: left;
+        }
+
+        p {
+            padding: 0 40px;
+            font-family: "Noto Sans-JP", sans-serif;
+            text-align: center;
+        }
+
+        hr {
+            width: 90%;
+            border: none;
+            border-top: 0.5px solid #555555;
+        }
+
+        a {
+            text-decoration: none;
+            color: #000000;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: #555
+        }
+
+        .logo {
+            backdrop-filter: blur(12px);
+        }
+
+        .logo img {
+            width: 100vw;
+            height: 300px;
+            margin-left: calc(-50vw + 50%);
+            object-fit: cover;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .logo h3 {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 0;
+            margin: 0;
+            mix-blend-mode: difference;
+            color: #ffffff;
+            font-size: 7vh;
+            font-family: "Josefin Sans", sans-serif;
+        }
+
+        .news{
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+            align-items: center;
+        }
+
+        .contents .news-img {
+            width: 100%;
+            height: 80%;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .contents {
+            padding: 5px;
+            align-items: center;
+            border-radius: 15px;
+            transition: 0.3s;
+        }
+
+        .contents:hover {
+            background-color: #acacac;
+            
+        }
+
+        .news-text h3 {
+            margin: 0;
+            margin-bottom: 0;
+        }
+
+        .news-text h4 {
+            font-size: 15px;
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+
+        .about h3 {
+            font-family: "Noto Sans-JP", sans-serif;
+        }
+ 
+        .contact {
+            text-align: center;
+        }
+        
+        .contact-link {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+            margin-bottom: 60px;
+            gap: 20px;
+        }
+
+        .contact a {
+            font-family: "Didact Gothic",sans-serif;
+            font-weight: bold;
+            font-size: 20px;
+            color: #4060c9;
+        }
+
+        @media screen and (min-width: 570px) {
+            .contents {
+            display: flex;
+            margin: 0 10%;
+            }
+
+            .contents .news-img {
+            width: 140px;
+            height: 80px;
+            margin-right: 15px;
+            }
+
+            .about-group {
+            margin-left: 25%;
+            margin-right: 25%;
+            }
+
+            .news-text h3 {
+            text-align: left;
+            }
+
+        }
+
+        @media screen and (max-width: 570px) {
+
+            .contents {
+                display: block;
+                align-items: center;
+                padding-top: 20px;
+                padding-bottom: 20px;
+            }
+            
+            .contents h4 {
+                text-align: center;
+            }
+
+            .contents .news-img {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                margin-bottom: 15px;
+                width: 260px;
+                height: 160px;
+            }
+
+        }
+
+    </style>
+</head>
+
+<body>
+    <main>
+        
+            <div id="header"></div>
+        
+            <div class="logo">
+                <img src="/logo.png">
+                <h3>ScProject</h3>
+            </div>
+
+            <div class="news">
+                <h2>NEWS</h2>
+                <hr>
+                    <a href="news2.html">
+                    <div class="contents">
+                        <img src="/back.png" class="news-img">
+                        <div class="news-text">
+                        <h3>近況について</h3>
+                        <h4>2025/7/19</h4>
+                        </div>
+                    </div>
+                    </a>
+                <hr>
+                <a href="news1.html">
+                    <div class="contents">
+                        <img src="/改修中.png" class="news-img">
+                        <div class="news-text">
+                        <h3>ホームページをリニューアルしました</h3>
+                        <h4>2025/7/19</h4>
+                        </div>
+                    </div>
+                    </a>
+                <hr>
+            </div>
+
+            <hr style="width: 100%; margin-top: 50px;">
+
+        <div class="about-group">    
+            <div class="about">
+            <h2>About me</h2>
+            <h3>プロフィール</h3>
+            <p>2011年生まれ。現在13歳。主にHTMLやCSSでウェブデザインを学んでおり、<br>
+                現在はネイティブアプリの開発にも興味を持っている。<br>
+                <a href="about.html" style="font-weight: 500;">詳しくはこちら▶</a></p>
+            </div>
+
+            <div class="contact">
+            <h2>Contact</h2>
+                <div class="contact-link">
+                    <a href="https://scratch.mit.edu/users/scproject-s">Scratch</a>
+                    <a href="https://x.com/ScProject_lab">X</a>
+                </div>
+            </div>
+        </div>
+
+        <div id="footer"></div>
+
+        </main>
+
+<script>
+    fetch("header.html")
+        .then(response => response.text())
+        .then(data => {
+            document.querySelector("#header").innerHTML = data;
+      });
+
+    fetch("footer.html")
+        .then((response) => response.text())
+        .then((data) => document.querySelector("#footer").innerHTML = data);
+</script>
+
+</body>
+</html>
