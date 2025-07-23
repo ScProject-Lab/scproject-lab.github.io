@@ -181,7 +181,7 @@
             <h3>プロフィール</h3>
             <p>2011年生まれ。現在13歳。主にHTMLやCSSでウェブデザインを学んでおり、<br>
                 現在はネイティブアプリの開発にも興味を持っている。<br>
-                <a href="about.html" style="font-weight: 500;">詳しくはこちら▶</a></p>
+                <a href="/page/about.html" style="font-weight: 500;">詳しくはこちら▶</a></p>
             </div>
 
             <div class="contact">
@@ -199,13 +199,13 @@
 
 <script>
 
-    fetch("/page/header.html")
+    fetch("header.html")
         .then(response => response.text())
         .then(data => {
             document.querySelector("#header").innerHTML = data;
     });
 
-    fetch("/page/footer.html")
+    fetch("footer.html")
         .then((response) => response.text())
         .then((data) => document.querySelector("#footer").innerHTML = data);
 
