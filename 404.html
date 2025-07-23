@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>NEWS</title>
+       <style>
+
+        @import url('https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap');
+
+        h1 {
+            text-align: center;
+            font-family: "Noto Sans-JP", sans-serif;
+            font-size: 32px;
+            letter-spacing: 2px;
+            padding: 0 30px;
+        }
+
+        h2 {
+            font-family: "Noto Sans-JP";
+            font-size: 25px;
+            letter-spacing: 2px;
+            margin: 40px;
+            margin-bottom: 80px;
+            text-align: center;
+        }
+
+        h3 {
+            text-align: center;
+            font-weight: 600;
+            color: #000000;
+            font-size: 20px;
+            font-family: "Noto Sans-JP";
+        }
+
+        h4 {
+            text-align: center;
+            font-weight: bold;
+            font-size: 20px;
+            color: #7a7a7a;
+            font-family: "Didact Gothic", sans-serif;
+            text-align: left;
+        }
+
+        p {
+            padding: 0 40px;
+            font-family: "Noto Sans-JP", sans-serif;
+            font-weight: 500;
+            margin-left: 15px;
+        }
+
+        hr {
+            width: 90%;
+            border: none;
+            border-top: 0.5px solid #555555;
+            margin-top: 100px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #000000;
+            transition: color 0.2s;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            margin: 0;
+        }
+
+        main {
+            display: flex;
+            margin-top: 100px;
+            flex-direction: column;
+            flex-grow: 1;
+            min-height: 0;
+        }
+
+        .contents {
+            margin-top: 60px;
+            margin-bottom: 60px;
+            margin-left: auto;
+            margin-right: auto;
+            width: 70%;
+        }
+
+        @media screen and (min-width: 570px) {
+
+        }
+
+        @media screen and (max-width: 570px) {
+
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <main>
+        
+        <div id="header"></div>
+
+        <h1>404</h1>
+
+        <h2>ページが見つかりませんでした。<br>
+            ページが他の場所に移動した可能性があります。
+        </h2>
+
+        
+
+    </main>
+
+    <div id="footer" style="min-height: 200px;"></div>
+
+<script>
+    fetch("/page/header.html")
+        .then(response => response.text())
+        .then(data => {
+            document.querySelector("#header").innerHTML = data;
+      });
+
+    fetch("/page/footer.html")
+        .then((response) => response.text())
+        .then((data) => document.querySelector("#footer").innerHTML = data);
+</script>
+</body>
+</html>
