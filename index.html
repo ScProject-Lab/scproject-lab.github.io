@@ -55,10 +55,6 @@
             color: #555
         }
 
-        .logo {
-            backdrop-filter: blur(12px);
-        }
-
         .logo img {
             width: 100vw;
             height: 360px;
@@ -82,13 +78,6 @@
             font-family: "Josefin Sans", sans-serif;
         }
 
-        .news{
-            width: 80%;
-            margin-left: auto;
-            margin-right: auto;
-            align-items: center;
-        }
-
         .contents .news-img {
             width: 100%;
             height: 80%;
@@ -107,18 +96,7 @@
             background-color: #acacac;
             
         }
-
-        .news-text h3 {
-            margin: 0;
-            margin-bottom: 0;
-        }
-
-        .news-text h4 {
-            font-size: 15px;
-            margin-top: 0;
-            margin-bottom: 0;
-        }
-
+        
         .about h3 {
             font-family: "Noto Sans-JP", sans-serif;
         }
@@ -178,15 +156,6 @@
                 text-align: center;
             }
 
-            .contents .news-img {
-                display: block;
-                margin-left: auto;
-                margin-right: auto;
-                margin-bottom: 15px;
-                width: 260px;
-                height: 160px;
-            }
-
         }
 
     </style>
@@ -198,34 +167,11 @@
             <div id="header"></div>
         
             <div class="logo">
-                <img src="/logo.png">
+                <img src="/image/logo.png">
                 <h3>ScProject</h3>
             </div>
 
-            <div class="news">
-                <h2>NEWS</h2>
-                <hr>
-                    <a href="news2.html">
-                    <div class="contents">
-                        <img src="/back.png" class="news-img">
-                        <div class="news-text">
-                        <h3>近況について</h3>
-                        <h4>2025/7/19</h4>
-                        </div>
-                    </div>
-                    </a>
-                <hr>
-                <a href="news1.html">
-                    <div class="contents">
-                        <img src="/改修中.png" class="news-img">
-                        <div class="news-text">
-                        <h3>ホームページをリニューアルしました</h3>
-                        <h4>2025/7/19</h4>
-                        </div>
-                    </div>
-                    </a>
-                <hr>
-            </div>
+            <div id="news"></div>
 
             <hr style="width: 100%; margin-top: 50px;">
 
@@ -252,15 +198,22 @@
         </main>
 
 <script>
-    fetch("header.html")
+
+    fetch("/page/header.html")
         .then(response => response.text())
         .then(data => {
             document.querySelector("#header").innerHTML = data;
-      });
+    });
 
-    fetch("footer.html")
+    fetch("/page/footer.html")
         .then((response) => response.text())
         .then((data) => document.querySelector("#footer").innerHTML = data);
+
+    fetch("/page/news.html")
+        .then((response) => response.text())
+        .then((data) => {
+            document.querySelector("#news").innerHTML = data; 
+        });
 </script>
 
 </body>
