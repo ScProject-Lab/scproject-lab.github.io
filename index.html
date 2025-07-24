@@ -39,20 +39,22 @@
             text-align: center;
         }
 
+        a {
+            text-decoration: none;
+        }
+
+        .about a {
+            color: #000000;
+        }
+
         hr {
             width: 90%;
             border: none;
             border-top: 0.5px solid #555555;
         }
 
-        a {
-            text-decoration: none;
-            color: #000000;
-            transition: color 0.2s;
-        }
-
-        a:hover {
-            color: #555
+        .logo {
+            backdrop-filter: blur(10px);
         }
 
         .logo img {
@@ -77,60 +79,16 @@
             font-size: 7vh;
             font-family: "Josefin Sans", sans-serif;
         }
-
-        .contents .news-img {
-            width: 100%;
-            height: 80%;
-            border-radius: 10px;
-            text-align: center;
-        }
-
-        .contents {
-            padding: 5px;
-            align-items: center;
-            border-radius: 15px;
-            transition: 0.3s;
-        }
-
-        .contents:hover {
-            background-color: #acacac;
-            
-        }
         
+        .about {
+            margin-bottom: 40px;
+        }
+
         .about h3 {
             font-family: "Noto Sans-JP", sans-serif;
         }
- 
-        .contact {
-            text-align: center;
-        }
-        
-        .contact-link {
-            display: flex;
-            justify-content: center;
-            margin-top: 10px;
-            margin-bottom: 50px;
-            gap: 20px;
-        }
-
-        .contact a {
-            font-family: "Didact Gothic",sans-serif;
-            font-weight: bold;
-            font-size: 20px;
-            color: #4060c9;
-        }
 
         @media screen and (min-width: 570px) {
-            .contents {
-            display: flex;
-            margin: 0 10%;
-            }
-
-            .contents .news-img {
-            width: 140px;
-            height: 80px;
-            margin-right: 15px;
-            }
 
             .about-group {
             margin-left: 25%;
@@ -139,21 +97,6 @@
 
             .news-text h3 {
             text-align: left;
-            }
-
-        }
-
-        @media screen and (max-width: 570px) {
-
-            .contents {
-                display: block;
-                align-items: center;
-                padding-top: 20px;
-                padding-bottom: 20px;
-            }
-            
-            .contents h4 {
-                text-align: center;
             }
 
         }
@@ -171,9 +114,8 @@
                 <h3>ScProject</h3>
             </div>
 
+            <h2>NEWS</h2>
             <div id="news"></div>
-
-            <hr style="width: 100%; margin-top: 50px;">
 
         <div class="about-group">    
             <div class="about">
@@ -182,14 +124,6 @@
             <p>2011年生まれ。現在13歳。主にHTMLやCSSでウェブデザインを学んでおり、<br>
                 現在はネイティブアプリの開発にも興味を持っている。<br>
                 <a href="/page/about.html" style="font-weight: 500;">詳しくはこちら▶</a></p>
-            </div>
-
-            <div class="contact">
-            <h2>Contact</h2>
-                <div class="contact-link">
-                    <a href="https://scratch.mit.edu/users/scproject-s">Scratch</a>
-                    <a href="https://x.com/ScProject_lab">X</a>
-                </div>
             </div>
         </div>
 

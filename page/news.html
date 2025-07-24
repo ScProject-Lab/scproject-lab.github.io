@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<html lang="ja">
 <head>
     <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=yes">
     <title>ScProject</title>
@@ -9,34 +8,24 @@
         @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap');
 
-        h2 {
-            text-align: center;
-            font-family: "Didact Gothic", sans-serif;
-            font-size: 200%;
-            letter-spacing: 2px;
+        .contents {
+            width: 80%;
+            display: flex;
+            margin: 0 auto;
         }
 
-        h3 {
-            text-align: center;
-            font-weight: 600;
-            color: #000000;
-            font-size: 20px;
-            font-family: "Noto Sans-JP",sans-serif;
+        .news-text h3 {
+            font-size: 100%;
+            display: block;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            max-width: 100%;
         }
 
-        h4 {
-            text-align: center;
-            font-weight: bold;
-            font-size: 20px;
-            color: #7a7a7a;
-            font-family: "Didact Gothic", sans-serif;
-            text-align: left;
-        }
-
-        p {
-            padding: 0 40px;
-            font-family: "Noto Sans-JP", sans-serif;
-            text-align: center;
+        .news-text {
+            display: block;
+            width: 100%;
         }
 
         hr {
@@ -45,188 +34,104 @@
             border-top: 0.5px solid #555555;
         }
 
-        a {
-            text-decoration: none;
-            color: #000000;
-            transition: color 0.2s;
-        }
-
-        a:hover {
-            color: #555
-        }
-
-        .logo {
-            backdrop-filter: blur(12px);
-        }
-
-        .logo img {
-            width: 100vw;
-            height: 360px;
-            margin-left: calc(-50vw + 50%);
-            object-fit: cover;
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position: center;
-        }
-
-        .logo h3 {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            padding: 0;
-            margin: 15px 0;
-            mix-blend-mode: difference;
-            color: #ffffff;
-            font-size: 7vh;
-            font-family: "Josefin Sans", sans-serif;
-        }
-
         .news{
-            width: 80%;
+            width: 85vw;
             margin-left: auto;
             margin-right: auto;
             align-items: center;
             flex-grow: 1;
         }
 
-        .contents .news-img {
-            width: 100%;
-            height: 80%;
-            border-radius: 10px;
-            text-align: center;
+        .news-box {
+            width: 50%;
+            display: block;
         }
 
-        .contents {
-            padding: 5px;
+        a.news-box {
+            display: flex;
+            flex-direction: row;
             align-items: center;
             border-radius: 15px;
             transition: 0.3s;
+            text-decoration: none;
+            color: inherit;
+            padding: 5px;
+            margin: 0 auto;
+            max-width: 90%;
+            gap: 15px;
         }
 
-        .contents:hover {
+        a.news-box .news-text {
+            flex-grow: 1;
+            overflow: hidden;
+        }
+
+        a.news-box:hover {
             background-color: #acacac;
-            
         }
 
-        .news-text h3 {
+        .news-img {
+            width: 80px;
+            height: 50px;
+            border-radius: 10px;
+            border: 0.5px #757575 solid;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        a.news-box .news-text h3,
+        a.news-box .news-text h4 {
             margin: 0;
-            margin-bottom: 0;
+            text-align: left;
         }
 
-        .news-text h4 {
-            font-size: 15px;
-            margin-top: 0;
-            margin-bottom: 0;
+        a.news-box .news-text h4 {
+            font-size: 12px;
+            color: #7a7a7a;
         }
- 
-        .contact {
-            text-align: center;
+
+        @media screen and (max-width: 770px) {
+            
+            .news {
+                width: 95%;
+            }
+
+            .contents {
+                display: block;
+                width: 90%;
+            }
+
+            .news-box {
+                width: 100%;
+            }
         }
         
-        .contact-link {
-            display: flex;
-            justify-content: center;
-            margin-top: 10px;
-            margin-bottom: 60px;
-            gap: 20px;
-        }
-
-        .contact a {
-            font-family: "Didact Gothic",sans-serif;
-            font-weight: bold;
-            font-size: 20px;
-            color: #4060c9;
-        }
-
-        @media screen and (min-width: 570px) {
-            .contents {
-            display: flex;
-            margin: 0 10%;
-            }
-
-            .contents .news-img {
-            width: 140px;
-            height: 80px;
-            margin-right: 15px;
-            }
-
-            .news-text h3 {
-            text-align: left;
-            }
-
-        }
-
-        @media screen and (max-width: 570px) {
-
-            .contents {
-                display: block;
-                align-items: center;
-                padding-top: 20px;
-                padding-bottom: 20px;
-            }
-            
-            .contents h4 {
-                text-align: center;
-            }
-
-            .contents .news-img {
-                display: block;
-                margin-left: auto;
-                margin-right: auto;
-                margin-bottom: 15px;
-                width: 260px;
-                height: 160px;
-            }
-
-        }
-
     </style>
 </head>
 
-<body>
-    <main>
-
             <div class="news">
-                <h2>NEWS</h2>
+
                 <hr>
-                    <a href="/page/news2.html">
-                    <div class="contents">
+
+                <div class="contents">
+                    <a href="/page/news2.html" class="news-box">
                         <img src="../image/back.png" class="news-img">
                         <div class="news-text">
-                        <h3>近況について</h3>
-                        <h4>2025/7/19</h4>
+                            <h3>近況について</h3>
+                            <h4>2025/7/23</h4>
                         </div>
-                    </div>
                     </a>
 
-                <hr>
-
-                <a href="/page/news1.html">
-                    <div class="contents">
+                    <a href="/page/news1.html" class="news-box">
                         <img src="../image/改修中.png" class="news-img">
                         <div class="news-text">
-                        <h3>ホームページをリニューアルしました</h3>
-                        <h4>2025/7/19</h4>
+                            <h3>ホームページをリニューアルしました</h3>
+                            <h4>2025/7/19</h4>
                         </div>
-                    </div>
                     </a>
+
+                </div>
+
                 <hr>
+
             </div>
-
-        </main>
-
-<script>
-    fetch("header.html")
-        .then(response => response.text())
-        .then(data => {
-            document.querySelector("#header").innerHTML = data;
-      });
-
-    fetch("footer.html")
-        .then((response) => response.text())
-        .then((data) => document.querySelector("#footer").innerHTML = data);
-</script>
-
-</body>
-</html>

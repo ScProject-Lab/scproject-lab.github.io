@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8" />
-    <title>404 Not found</title>
+    <title>ホームページをリニューアルしました</title>
        <style>
 
         @import url('https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap');
@@ -18,12 +18,10 @@
         }
 
         h2 {
-            font-family: "Noto Sans-JP";
+            font-family: "Didact Gothic", sans-serif;
             font-size: 25px;
             letter-spacing: 2px;
             margin: 40px;
-            margin-bottom: 80px;
-            text-align: center;
         }
 
         h3 {
@@ -31,7 +29,7 @@
             font-weight: 600;
             color: #000000;
             font-size: 20px;
-            font-family: "Noto Sans-JP";
+            font-family: "Noto Sans-JP",sans-serif;
         }
 
         h4 {
@@ -78,6 +76,14 @@
             min-height: 0;
         }
 
+        .contents {
+            margin-top: 60px;
+            margin-bottom: 60px;
+            margin-left: auto;
+            margin-right: auto;
+            width: 70%;
+        }
+
         @media screen and (min-width: 570px) {
 
         }
@@ -90,30 +96,30 @@
 </head>
 
 <body>
-
     <main>
         
         <div id="header"></div>
 
-        <h1>404</h1>
+        <div class="midashi">
+        <h1>ToDo</h1>
+        </div>
 
-        <h2>ページが見つかりませんでした。<br>
-            ページが他の場所に移動した可能性があります。
-        </h2>
-        
+        <hr style="width: 95%; margin-top: 50px;">
+
+        <hr style="margin-top: 40px;">
 
     </main>
 
-    <div id="footer" style="min-height: 200px;"></div>
+        <div id="footer" style="min-height: 200px;"></div>
 
 <script>
-    fetch("header.html")
+    fetch("../header.html")
         .then(response => response.text())
         .then(data => {
             document.querySelector("#header").innerHTML = data;
       });
 
-    fetch("footer.html")
+    fetch("../footer.html")
         .then((response) => response.text())
         .then((data) => document.querySelector("#footer").innerHTML = data);
 </script>
