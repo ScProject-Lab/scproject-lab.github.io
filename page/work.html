@@ -9,58 +9,6 @@
         @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap');
 
-        h1 {
-            text-align: center;
-            font-family: "Noto Sans-JP", sans-serif;
-            font-size: 32px;
-            letter-spacing: 2px;
-            padding: 0 30px;
-        }
-
-        h2 {
-            font-family: "Didact Gothic", sans-serif;
-            font-size: 25px;
-            letter-spacing: 2px;
-            margin: 40px;
-        }
-
-        h3 {
-            text-align: center;
-            font-weight: 600;
-            color: #000000;
-            font-size: 20px;
-            font-family: "Noto Sans-JP",sans-serif;
-        }
-
-        h4 {
-            text-align: center;
-            font-weight: bold;
-            font-size: 20px;
-            color: #7a7a7a;
-            font-family: "Didact Gothic", sans-serif;
-            text-align: left;
-        }
-
-        p {
-            padding: 0 40px;
-            font-family: "Noto Sans-JP", sans-serif;
-            font-weight: 500;
-            margin-left: 15px;
-        }
-
-        hr {
-            width: 90%;
-            border: none;
-            border-top: 0.5px solid #555555;
-            margin-top: 100px;
-        }
-
-        a {
-            text-decoration: none;
-            color: #000000;
-            transition: color 0.2s;
-        }
-
         body {
             min-height: 100vh;
             display: flex;
@@ -69,27 +17,21 @@
         }
 
         main {
-            display: flex;
-            margin-top: 100px;
-            flex-direction: column;
             flex-grow: 1;
-            min-height: 0;
         }
 
-        .contents {
-            margin-top: 60px;
-            margin-bottom: 60px;
-            margin-left: auto;
-            margin-right: auto;
-            width: 70%;
+        h2 {
+            font-family: "Didact Gothic", sans-serif;
+            font-size: 25px;
+            letter-spacing: 2px;
+            margin-top: 80px;
+            margin-left: 12%;
         }
-
-        @media screen and (min-width: 570px) {
-
-        }
-
-        @media screen and (max-width: 570px) {
-
+        
+        hr {
+            width: 90%;
+            border: none;
+            border-top: 0.5px solid #555555;
         }
 
     </style>
@@ -100,17 +42,14 @@
         
         <div id="header"></div>
 
-        <div class="midashi">
-        <h1>ToDo</h1>
+        <div class="co">
+            <h2>作品</h2>
+            <div id="works"></div>
         </div>
-
-        <hr style="width: 95%; margin-top: 50px;">
-
-        <hr style="margin-top: 40px;">
-
+        
     </main>
 
-        <div id="footer" style="min-height: 200px;"></div>
+    <div id="footer"></div>
 
 <script>
     fetch("../header.html")
@@ -118,6 +57,12 @@
         .then(data => {
             document.querySelector("#header").innerHTML = data;
       });
+
+    fetch("/page/works.html")
+        .then((response) => response.text())
+        .then((data) => {
+            document.querySelector("#works").innerHTML = data; 
+        });
 
     fetch("../footer.html")
         .then((response) => response.text())

@@ -10,7 +10,15 @@
         @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap');
 
         body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
             margin: 0;
+        }
+
+        main {
+            flex-grow: 1;
+            margin-top: 80px;
         }
 
         h1 {
@@ -65,10 +73,6 @@
             transition: color 0.2s;
         }
 
-        main {
-            margin-top: 100px;
-        }
-
         .contents {
             margin-top: 60px;
             margin-bottom: 60px;
@@ -101,9 +105,9 @@
     <div id="header"></div>
 
     <main>
-
+        
         <div class="midashi">
-        <h1>ホームページをリニューアルしました</h1>
+        <h1>JavaScriptで遊んでみる</h1>
         </div>
 
         <hr style="width: 95%; margin-top: 50px;">
@@ -113,19 +117,6 @@
         <p>こんにちは。僕がWebデザインを始めてからはや半年。<br>
             更にホームページを公開してから少ししか時間が経ってないにも関わらず、<br>
             僕が何故ホームページを作り直したのか説明しようと思います。</p>
-
-        <h2>なぜ</h2>
-        <p>まず、こんなにも早くホームページを作り直した理由ですが、<br>
-            理由は一つです。<br><br>雑だった<br><br>
-            ただそれだけです。前のホームページの作りがあまりにも雑すぎました。<br>
-            これまではVSCodeで作ったものをGithubにアップロードして作っていたのですが、<br>
-            いつしかファイルのデータがめちゃくちゃになって戻しようがなくなりました。<br>
-            そこでこのホームページを作ったわけです。
-        </p>
-
-        <h2>終わりに</h2>
-        <p>さて、短いですが今回の記事は終わりです。これからはこっちのページで<br>
-            主に活動内容を載せていきます。これからも何卒応援よろしくお願いします。</p>
 
         </div>
 
@@ -146,6 +137,5 @@
         .then((response) => response.text())
         .then((data) => document.querySelector("#footer").innerHTML = data);
 </script>
-
 </body>
 </html>

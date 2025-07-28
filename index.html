@@ -2,16 +2,22 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=yes">
-    <title>ScProject</title>
+    <title>ryu</title>
     <style>
 
         @import url('https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
+
+        @font-face {
+            font-family: "LINESeedJP";
+            src: url("LINESeedJP_OTF_Bd.woff2");
+        }
 
         h2 {
             text-align: center;
-            font-family: "Didact Gothic", sans-serif;
+            font-family: "Didact Gothic";
             font-size: 200%;
             letter-spacing: 2px;
         }
@@ -21,7 +27,8 @@
             font-weight: 600;
             color: #000000;
             font-size: 20px;
-            font-family: "Noto Sans-JP",sans-serif;
+            font-family: "Noto sans JP";
+            font-size: 1px;
         }
 
         h4 {
@@ -29,13 +36,13 @@
             font-weight: bold;
             font-size: 20px;
             color: #7a7a7a;
-            font-family: "Didact Gothic", sans-serif;
+            font-family: "Didact Gothic";
             text-align: left;
         }
 
         p {
             padding: 0 40px;
-            font-family: "Noto Sans-JP", sans-serif;
+            font-family: "Noto Sans-JP";
             text-align: center;
         }
 
@@ -47,6 +54,17 @@
             color: #000000;
         }
 
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            margin: 0;
+        }
+
+        main {
+            background-color: #f2f2f2;
+        }
+
         hr {
             width: 90%;
             border: none;
@@ -54,14 +72,19 @@
         }
 
         .logo {
-            backdrop-filter: blur(10px);
+            align-items: center;
+            justify-content: center;
+            width: 100vw;
+            margin-left: auto;
+            margin-right: auto;
+            display: flex;
+            gap: 10px;
         }
 
         .logo img {
             width: 100vw;
             height: 360px;
             margin-left: calc(-50vw + 50%);
-            object-fit: cover;
             background-repeat: no-repeat;
             background-size: cover;
             background-position: center;
@@ -69,15 +92,16 @@
 
         .logo h3 {
             position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
             padding: 0;
-            margin: 15px 0;
-            mix-blend-mode: difference;
+            margin-top: 90px;
+            color: #000000;
+            font-size: 5vh;
+            font-family: "Lexend";
+            letter-spacing: 3px;
+            font-weight: 500;
+            text-align: center;
             color: #ffffff;
-            font-size: 7vh;
-            font-family: "Josefin Sans", sans-serif;
+            mix-blend-mode: difference;
         }
         
         .about {
@@ -85,7 +109,11 @@
         }
 
         .about h3 {
-            font-family: "Noto Sans-JP", sans-serif;
+            font-family: "Noto Sans-JP";
+        }
+
+        .about p {
+            line-height: 1.8;
         }
 
         @media screen and (min-width: 570px) {
@@ -105,31 +133,33 @@
 </head>
 
 <body>
+
+    <div id="header"></div>
+
     <main>
         
-            <div id="header"></div>
-        
-            <div class="logo">
-                <img src="/image/logo.png">
-                <h3>ScProject</h3>
-            </div>
-
-            <h2>NEWS</h2>
-            <div id="news"></div>
+        <div class="logo">
+            <img src="image/logo.png">
+            <h3>SCLab</h3>
+        </div>
 
         <div class="about-group">    
             <div class="about">
             <h2>About me</h2>
-            <h3>プロフィール</h3>
             <p>2011年生まれ。現在13歳。主にHTMLやCSSでウェブデザインを学んでおり、<br>
                 現在はネイティブアプリの開発にも興味を持っている。<br>
                 <a href="/page/about.html" style="font-weight: 500;">詳しくはこちら▶</a></p>
             </div>
         </div>
 
-        <div id="footer"></div>
+        <h2>NEWS</h2>
+        <div id="news"></div>
+
+
 
         </main>
+
+        <div id="footer"></div>
 
 <script>
 
@@ -148,6 +178,7 @@
         .then((data) => {
             document.querySelector("#news").innerHTML = data; 
         });
+
 </script>
 
 </body>
