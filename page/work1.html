@@ -2,46 +2,51 @@
 <html>
 <head>
     <meta charset="UTF-8" />
-    <title>ホームページをリニューアルしました</title>
-       <style>
-
+    <title>ToDoリスト - SCLab</title>
+</head>
+<style>
         @import url('https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap');
+
+        input {
+            --background-color: #f3f3f3;
+        }
 
         body {
             min-height: 100vh;
             display: flex;
             flex-direction: column;
             margin: 0;
+            background-color: #f3f3f3;
         }
 
         main {
             flex-grow: 1;
-            margin-top: 80px;
+            margin-top: 73px;
         }
 
         h1 {
             text-align: center;
-            font-family: "Noto Sans-JP", sans-serif;
+            font-family: "Noto Sans-JP";
             font-size: 32px;
             letter-spacing: 2px;
             padding: 0 30px;
         }
 
         h2 {
-            font-family: "Didact Gothic", sans-serif;
-            font-size: 25px;
+            font-family: "Didact Gothic";
+            font-size: 28px;
             letter-spacing: 2px;
             margin: 40px;
         }
 
         h3 {
-            text-align: center;
-            font-weight: 600;
-            color: #000000;
-            font-size: 20px;
-            font-family: "Noto Sans-JP",sans-serif;
+            text-align: left;
+            margin-left: 10%;
+            font-size: 25px;
+            font-family: "Noto Sans-JP";
+            letter-spacing: 1px;
         }
 
         h4 {
@@ -49,8 +54,43 @@
             font-weight: bold;
             font-size: 20px;
             color: #7a7a7a;
-            font-family: "Didact Gothic", sans-serif;
+            font-family: "Didact Gothic";
             text-align: left;
+        }
+
+        .add input {
+            padding: 5px;
+            width: 200px;
+            height: 25px;
+            border: none;
+            outline: none;
+            border-bottom: 2.5px #000000 solid;
+            background-color: var(--background-color);
+        }
+
+        button {
+            padding: 10px 15px;
+            margin: 5px;
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
+            background-color: #ffbc3f;
+            width: 43px;
+            height: 43px;
+            font-size: 25px;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        button span {
+            height: auto;
+        }
+
+        .contents li {
+            margin-top: 5px;
+            list-style: none;
         }
 
         p {
@@ -76,10 +116,82 @@
         .contents {
             margin-top: 60px;
             margin-bottom: 60px;
+            width: 70%;
             margin-left: auto;
             margin-right: auto;
-            width: 70%;
         }
+
+        .add {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .checkbox-icon {
+            position: relative;
+            width: 20px;
+            height: 20px;
+            appearance: none;
+            background-color: #fff;
+            border: 2px #808080 solid;
+            border-radius: 4px;
+            box-shadow: 0 0 0 0 transparent;
+            vertical-align: middle;
+        }
+
+        .checkbox-icon:checked::before {
+            position: absolute;
+            inset: 0;
+            display: block;
+            width: 100%;
+            height: 100%;
+            content: "";
+            opacity: 1;
+            background-image: url("../image/check.png");
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+            background-color: #fff;
+        }
+
+        .checkbox-icon:hover {
+            cursor: pointer;
+        }
+
+        #todo-list {
+            display: grid;
+            justify-content: center;
+            height: 40px;
+            align-items: center;
+            padding: 0;
+        }
+
+        #todo-list li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 6px 15px;
+            width: 350px;
+            height: 65px;
+            border-radius: 15px;
+            background-color: #ffffff;
+            justify-content: space-between;
+        }
+
+        #todo-list li input {
+            align-items: center;
+        }
+
+        #todo-list li span {
+            margin-left: 10px;
+            align-items: center;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            flex: 1;
+            min-width: 0;
+        }
+
 
         @media screen and (min-width: 570px) {
 
@@ -97,9 +209,7 @@
 
         }
 
-    </style>
-</head>
-
+</style>
 <body>
 
     <div id="header"></div>
@@ -107,35 +217,37 @@
     <main>
         
         <div class="midashi">
-        <h1>JavaScriptで遊んでみる</h1>
+        <h3>ToDoリスト</h3>
         </div>
-
-        <hr style="width: 95%; margin-top: 50px;">
 
         <div class="contents">
-        <h2>はじめに</h2>
-        <p>こんにちは。僕がWebデザインを始めてからはや半年。<br>
-            更にホームページを公開してから少ししか時間が経ってないにも関わらず、<br>
-            僕が何故ホームページを作り直したのか説明しようと思います。</p>
+
+            <div class="add">
+                <input type="text" id="todo-input" placeholder="予定を入力" />
+                <button id="add-btn"><span>+</span></button>
+            </div>
+
+            <ul id="todo-list"></ul>
+
 
         </div>
-
-        <hr style="margin-top: 40px;">
 
     </main>
 
         <div id="footer"></div>
 
-<script>
-    fetch("../header.html")
-        .then(response => response.text())
-        .then(data => {
+    <script src="js/todolist.js"></script>
+    <script>
+        fetch("../header.html")
+            .then(response => response.text())
+            .then(data => {
             document.querySelector("#header").innerHTML = data;
-      });
+        });
 
-    fetch("../footer.html")
-        .then((response) => response.text())
-        .then((data) => document.querySelector("#footer").innerHTML = data);
-</script>
+        fetch("../footer.html")
+            .then((response) => response.text())
+            .then((data) => document.querySelector("#footer").innerHTML = data);
+    </script>
+
 </body>
 </html>

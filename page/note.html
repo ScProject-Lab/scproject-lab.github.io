@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8" />
-    <title>ホームページをリニューアルしました</title>
+    <title>記事 - SCLab</title>
        <style>
 
         @import url('https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap');
@@ -57,7 +57,7 @@
         .then((data) => {
             document.querySelector("#news").innerHTML = data; 
         });
-
+        
     fetch("../footer.html")
         .then((response) => response.text())
         .then((data) => document.querySelector("#footer").innerHTML = data);
