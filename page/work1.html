@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
 <head>
-    <meta charset="UTF-8" />
+    <meta name="viewport" charset="UTF-8" />
     <title>ToDoリスト - SCLab</title>
 </head>
 <style>
@@ -28,7 +28,7 @@
 
         h1 {
             text-align: center;
-            font-family: "Noto Sans-JP";
+            font-family: "Noto Sans JP";
             font-size: 32px;
             letter-spacing: 2px;
             padding: 0 30px;
@@ -45,7 +45,7 @@
             text-align: left;
             margin-left: 10%;
             font-size: 25px;
-            font-family: "Noto Sans-JP";
+            font-family: "Noto Sans JP";
             letter-spacing: 1px;
         }
 
@@ -95,7 +95,7 @@
 
         p {
             padding: 0 40px;
-            font-family: "Noto Sans-JP", sans-serif;
+            font-family: "Noto Sans JP", sans-serif;
             font-weight: 500;
             margin-left: 15px;
         }
@@ -137,6 +137,7 @@
             border-radius: 4px;
             box-shadow: 0 0 0 0 transparent;
             vertical-align: middle;
+            transition: all 0.3s ease-in;
         }
 
         .checkbox-icon:checked::before {
@@ -159,11 +160,17 @@
         }
 
         #todo-list {
-            display: grid;
-            justify-content: center;
-            height: 40px;
+            display: flex;
+            flex-direction: column;
             align-items: center;
+            height: 400px;
             padding: 0;
+            overflow-y: auto;
+
+            &:has(.checkbox-icon:disabled) {
+                opacity: 0.4;
+            }
+
         }
 
         #todo-list li {
@@ -171,11 +178,12 @@
             align-items: center;
             gap: 10px;
             padding: 6px 15px;
+            margin-top: 12px;
             width: 300px;
-            height: 65px;
+            min-height: 65px;
             border-radius: 15px;
             background-color: #ffffff;
-            box-shadow: #000000;
+            box-shadow: 5px 5px 15px #b6b6b6;
             justify-content: space-between;
         }
 
@@ -218,7 +226,7 @@
     <main>
         
         <div class="midashi">
-        <h3>ToDoリスト</h3>
+        <h3>タスク</h3>
         </div>
 
         <div class="contents">
@@ -230,7 +238,6 @@
 
             <ul id="todo-list"></ul>
 
-
         </div>
 
     </main>
@@ -238,6 +245,7 @@
         <div id="footer"></div>
 
     <script src="js/todolist.js"></script>
+
     <script>
         fetch("../header.html")
             .then(response => response.text())

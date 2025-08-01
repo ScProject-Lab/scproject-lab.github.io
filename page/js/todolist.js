@@ -1,6 +1,7 @@
 const input = document.getElementById('todo-input');
 const addBtn = document.getElementById('add-btn');
 const todoList = document.getElementById('todo-list');
+const sleep = (time) => new Promise((resolve) => setTimeout(resolve, time));
 
 // --- 1. ToDoリストを保存する関数 ---
 function saveTodos() {
@@ -29,8 +30,10 @@ function addTodo(text) {
     checkbox.className = 'checkbox-icon';
     checkbox.autocomplete = 'off';
 
-    checkbox.addEventListener('change', () => {
+    checkbox.addEventListener('change', async() => {
         if (checkbox.checked) {
+            await sleep(250);
+            console.log("todo削除")
             li.remove();
             saveTodos(); // 削除後に保存！
         }
@@ -41,7 +44,7 @@ function addTodo(text) {
 
     li.appendChild(checkbox);
     li.appendChild(textNode);
-    todoList.appendChild(li);
+    todoList.insertBefore(li, todoList.firstChild);
 }
 
 // --- 4. 「追加」ボタンのイベント ---
@@ -55,3 +58,5 @@ addBtn.addEventListener('click', () => {
 
 // --- 5. ページ読み込み時にToDo復元 ---
 window.addEventListener('DOMContentLoaded', loadTodos);
+
+
