@@ -3,7 +3,6 @@ const addBtn = document.getElementById('add-btn');
 const todoList = document.getElementById('todo-list');
 const sleep = (time) => new Promise((resolve) => setTimeout(resolve, time));
 
-// --- 1. ToDoリストを保存する関数 ---
 function saveTodos() {
     const todos = [];
     todoList.querySelectorAll('li span').forEach(span => {
@@ -12,7 +11,6 @@ function saveTodos() {
     localStorage.setItem('todos', JSON.stringify(todos));
 }
 
-// --- 2. ToDoリストを読み込む関数 ---
 function loadTodos() {
     const saved = localStorage.getItem('todos');
     if (saved) {
@@ -21,7 +19,6 @@ function loadTodos() {
     }
 }
 
-// --- 3. ToDoを追加する共通処理（手動追加・復元どちらにも使う） ---
 function addTodo(text) {
     const li = document.createElement('li');
 
@@ -32,10 +29,10 @@ function addTodo(text) {
 
     checkbox.addEventListener('change', async() => {
         if (checkbox.checked) {
-            await sleep(250);
+            await sleep(100);
             console.log("todo削除")
             li.remove();
-            saveTodos(); // 削除後に保存！
+            saveTodos(); // 削除後に保存
         }
     });
 
@@ -47,7 +44,7 @@ function addTodo(text) {
     todoList.insertBefore(li, todoList.firstChild);
 }
 
-// --- 4. 「追加」ボタンのイベント ---
+//追加ボタンのイベント
 addBtn.addEventListener('click', () => {
     const text = input.value.trim();
     if (text === '') return;
@@ -56,7 +53,7 @@ addBtn.addEventListener('click', () => {
     input.value = '';
 });
 
-// --- 5. ページ読み込み時にToDo復元 ---
+//ページ読み込み時にToDo復元
 window.addEventListener('DOMContentLoaded', loadTodos);
 
 
