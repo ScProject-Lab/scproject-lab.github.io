@@ -7,6 +7,10 @@
         @import url('https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap');
 
+        ul {
+            padding-inline-start: 0;
+        }
+
         .footer {
             display: flex;
             justify-content: space-between;
@@ -32,6 +36,7 @@
             flex-direction: column;
             justify-content: space-between;
             height: 100%;
+            padding-left: 40px;
         }
 
         .footer-menu-title {
@@ -55,13 +60,21 @@
         }
 
         .footer-menu-item {
-            margin-top: 5px;
+            margin: 0;
+            padding: 0;
+            height: 100%;
         }
 
         .footer-bottom-align {
             display: flex;
             align-items: flex-end;
             height: 100%;
+        }
+
+        .footer-menu-link {
+            height: auto;
+            display: flex;
+            align-items: center;
         }
 
         .copyright {
@@ -71,12 +84,13 @@
             color: #bdbdbd;
             font-size: 13px;
             margin: 0;
+            padding-right: 40px;
         }
         
         @media screen and (max-width: 570px){
             
             .footer {
-                width: 100%;
+                width: 100vw;
                 padding: 20px 20px;
             }
 
@@ -87,7 +101,10 @@
     <div class="footer">
         <ul class="footer-menu">
             <li class="footer-menu-title"><a class="footer-menu-text">外部リンク</a></li>
+            <div class="footer-menu-link">
+            <a href="https://x.com/ScProject_lab" target="_blank"> <img src="https://abs.twimg.com/favicons/twitter.3.ico"></a>
             <li class="footer-menu-item"><a class="footer-menu-button" href="https://x.com/ScProject_lab" target="_blank">X</a></li>
+            </div>
             <li class="footer-menu-item"><a class="footer-menu-button" href="https://scratch.mit.edu/users/scproject-s" target="_blank">Scratch</a></li>
             <li class="footer-menu-item"><a class="footer-menu-button" href="https://www.youtube.com/@Sclab-vfx" target="_blank">YouTube</a></li>
         </ul>
