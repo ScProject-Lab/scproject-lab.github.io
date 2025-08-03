@@ -2,17 +2,17 @@ const usersend = document.getElementById("input-user");
 const passsend = document.getElementById("input-pass");
 
 function inputsend() {
+    const formData = new URLSearchParams();
+    formData.append("user", usersend.value);
+    formData.append("pass", passsend.value);
+
     fetch("https://script.google.com/macros/s/AKfycbxcM1lytERc9yneZUSAqPannItn20uMxwfUm1vNsquDbpTx1uLDQpUOzrq1XKNdnTHA/exec", {
         method: "POST",
         headers: {
-            "Content-Type": "application/json"
+            "Content-Type": "application/x-www-form-urlencoded"  // ← プリフライト回避できる
         },
-        body: JSON.stringify({
-            user: usersend.value,     // .value を使って文字列を取得
-            pass: passsend.value
-        })
+        body: formData
     })
-
     .then(res => res.text())
     .then(data => {
         console.log("GASの返事:", data);
