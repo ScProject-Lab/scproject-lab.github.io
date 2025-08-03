@@ -144,9 +144,9 @@
         <div id="input-form">
             <div class="input-contents">
                 <h1>Form UI</h1>
-                <input placeholder="好きなテキストを入力">
-                <input placeholder="Enter the text you want">
-                <button>送信</button>
+                <input id="input-user" placeholder="好きなテキストを入力" autocomplete="off">
+                <input id="input-pass" placeholder="Enter the text you want" autocomplete="off">
+                <button onclick="inputsend()">送信</button>
             </div>
         </div>
 
@@ -154,7 +154,7 @@
 
     <div id="footer"></div>
 
-    <script src=""></script>
+    <script src="js/form.js"></script>
 
     <script>
         fetch("../header.html")
