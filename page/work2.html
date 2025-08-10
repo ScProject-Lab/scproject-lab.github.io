@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta name="viewport" charset="UTF-8" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>入力フォームのデザイン - SCLab</title>
 </head>
 <style>
@@ -128,6 +129,77 @@
             text-align: center;
         }
 
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: #0000009d;
+            z-index: 9998;
+        }
+
+        .window {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 400px;
+            height: 520px;
+            background-color: #00000027;
+            backdrop-filter: blur(20px);
+            border-radius: 15px;
+            box-shadow: 0 8px 24px #0000002e;
+            overflow: hidden;
+            font-family: "Noto Sans JP", sans-serif;
+            z-index: 9999;
+            text-align: center;
+        }
+
+        .window-header {
+            color: #ffffff;
+            text-align: center;
+            padding: 12px 18px;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .window-body {
+            margin-left: auto;
+            margin-right: auto;
+            text-align: left;
+            width: 60%;
+            color: #e7e7e7;
+            font-weight: 300;
+            padding: 20px;
+        }
+
+        .window img {
+            width: 70px;
+            height: 62px;
+            margin-top: 40px;
+        }
+
+        .window button {
+            width: 150px;
+            height: 40px;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            margin: 20px 10px;
+        }
+
+        #agree-btn {
+            background-color: #386db3;
+        }
+
+        #cancel-btn {
+            background-color: #d33a3a;
+        }
+
         @media screen and (min-width: 570px) {
 
         }
@@ -151,6 +223,26 @@
                 <button onclick="inputsend()">送信</button>
             </div>
         </div>
+
+        <div class="window-contents">
+            <div class="overlay" onclick="backclick()"></div>
+            <div class="window">
+                <img src="../image/警告.png">
+                <div class="window-header">警告</div>
+                <div class="window-body">
+                    このフォームは学習目的で作成されたものであり、実際のサービスではありません。<br>
+                    実際のサービスのパスワードを含む個人情報は絶対に入力しないでください。<br>
+                    内容に同意される場合のみ、「同意」ボタンをクリックして送信してください。
+                </div>
+
+                <div class="form-button">
+                    <button id="agree-btn" onclick="agree()">同意</button>
+                    <button id="cancel-btn" onclick="cancel()">キャンセル</button>
+                </div>
+            </div>
+        </div>
+
+        <div class=""></div>
 
     </main>
 
