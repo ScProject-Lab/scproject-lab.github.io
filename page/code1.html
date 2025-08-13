@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=yes">
+    <title>code 1</title>
+</head>
+<body>
+    <main>
+
+        <!-- ページが手抜きだとか言わないでよねっ(´・ω・｀) -->
+
+        <p>
+import scratchattach as sa<br>
+import os<br>
+import time<br>
+
+username = "あなたのユーザー名を入力"<br><br>
+
+project_id = "操作したいプロジェクトのIDを入力(/project/の後)"<br><br>
+
+session = sa.login_by_id("あなたのセッションIDを入力", username=username)<br>
+cloud = session.connect_cloud(project_id)<br><br>
+
+var_name = "操作したいクラウド変数の名前を入力"<br>
+value = 任意の数値を入力(""は無し)<br><br>
+
+cloud.set_var(var_name, value)
+        </p>
+    </main>
+</body>
