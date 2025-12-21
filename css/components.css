@@ -258,3 +258,67 @@ p.main-about-me {
         margin-top: 20px;
     }
 }
+
+/* 記事・ニュースetc... */
+main.news {
+    padding-top: 30px;
+}
+
+.news-main {
+    max-width: 800px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.news-main-date {
+    font-family: "Lexend", "Noto Sans JP", sans-serif;
+    font-weight: 450;
+    font-size: 0.9rem;
+    color: #555555;
+    margin-bottom: 10px;
+}
+
+.news-content a {
+    font-family: var(--font-base);
+    font-weight: 650;
+    color: #000;
+}
+
+.news-content p {
+    font-family: var(--font-base);
+    font-weight: 450;
+    font-size: 1rem;
+}
+
+.news-content section {
+    margin-top: 60px;
+}
+
+.news-content-img {
+    border-radius: 8px;
+    border: #969696 1px solid;
+}
+
+.codeblock {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #e2e2e2;
+    padding: 2px 4px;
+    border-radius: 4px;
+    font-size: 0.95rem;
+}
+
+.news-content ul {
+    padding-left: 30px;
+}
+
+.news-ps {
+    font-family: var(--font-base);
+    font-size: 0.9rem;
+    color: #3a3a3a;
+}
+
+@media screen and (max-width: 480px) {
+    main.news {
+        padding: 10px;
+    }
+}
