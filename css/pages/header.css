@@ -1,0 +1,17 @@
+.main-header-content a {
+    text-decoration: none;
+    display: inline-block;
+    padding: 5px;
+    color: #000;
+    font-size: 12px;
+}
+
+@media screen and (max-width: 480px) {
+    .main-header-content a {
+        display: none;
+    }
+}
+
+#header {
+    flex-shrink: 0;
+}

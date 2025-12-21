@@ -1,0 +1,31 @@
+:root {
+    --main-color: #3498db;
+    --text-color: #000;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    font-family:
+        "Noto Sans JP",
+        -apple-system,
+        BlinkMacSystemFont,
+        "Hiragino Sans",
+        system-ui,
+        sans-serif;
+    color: var(--text-color);
+    font-weight: 500;
+    font-style: normal;
+    margin: 0;
+    background-color: #f7f7f7;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
