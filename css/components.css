@@ -154,13 +154,20 @@ p.main-about-me {
     width: 1700px;
     max-width: 90%;
     margin: 0 auto;
+    justify-content: space-between;
+}
+
+.main-content-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .main-content-list {
+    width: 100%;
+    max-width: 600px;
     margin: 0 auto;
-    margin-top: 80px;
-    max-width: 80%;
-    width: 45%;
     text-align: center;
 }
 
@@ -238,7 +245,6 @@ p.main-about-me {
     font-size: 0.8rem;
     font-weight: 600;
     padding: 0.6rem 0.6rem;
-    margin-top: 5px;
     border: none;
     border-radius: 10px;
     background-color: #000000;
@@ -246,17 +252,21 @@ p.main-about-me {
     cursor: pointer;
     transition: all 0.3s ease;
     text-decoration: none;
+    margin: 10px auto 0;
 }
 
 @media screen and (max-width: 950px) {
     .main-content {
         flex-direction: column;
+        align-items: center;
+    }
+
+    .main-content-section {
+        width: 100%;
     }
 
     .main-content-list {
         max-width: 100%;
-        width: 100%;
-        margin-top: 20px;
     }
 }
 
@@ -322,12 +332,4 @@ main.news {
     main.news {
         padding: 10px;
     }
-}
-
-/* 連絡先 */
-.main-contact-media {
-    font-family: var(--font-en);
-    list-style: none;
-    margin: 0;
-    padding: 0;
 }

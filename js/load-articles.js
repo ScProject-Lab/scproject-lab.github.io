@@ -39,19 +39,10 @@ function loadItems(jsonFile, containerId, detailText, detailLink) {
                 container.appendChild(link);
                 container.appendChild(hr);
             });
-
-            // 「詳細を見る」リンクを最後に追加
-            if(detailText && detailLink){
-                const detailAnchor = document.createElement('a');
-                detailAnchor.className = 'main-content-detail';
-                detailAnchor.href = detailLink;
-                detailAnchor.textContent = detailText;
-                container.appendChild(detailAnchor);
-            }
         })
         .catch(err => console.error('JSON読み込みエラー:', err));
 }
 
-loadItems('/articles/articles.json', 'article-list', '記事を見る', '#');
+loadItems('/articles/articles.json', 'article-list');
 
-loadItems('/articles/news.json', 'news-list', 'お知らせを見る', '#');
+loadItems('/articles/news.json', 'news-list');
