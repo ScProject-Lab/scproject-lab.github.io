@@ -78,7 +78,7 @@ header {
 
 .main-footer-text {
     font-family: var(--font-en);
-    font-weight: 530;
+    font-weight: 350;
 }
 
 /* 区切り線 */
@@ -290,7 +290,7 @@ main.news {
 }
 
 .news-content a {
-    font-family: var(--font-base);
+    font-family: "Lexend", var(--font-base);
     font-weight: 650;
     color: #000;
 }
@@ -326,6 +326,10 @@ main.news {
     font-family: var(--font-base);
     font-size: 0.9rem;
     color: #3a3a3a;
+}
+
+span.bold {
+    font-weight: 600;
 }
 
 @media screen and (max-width: 480px) {
